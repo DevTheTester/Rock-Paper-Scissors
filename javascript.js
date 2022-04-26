@@ -32,6 +32,22 @@ function playRound(playerSelection, computerSelection) {
     
     // If selection number is the same declare draw.
     if (playerChoice === cpuChoice) {
-        return `You chose ${playerSelection}, CPU chose ${computerSelection}, It's a Draw!`;
+        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . It's a draw!`;
     }
-}
+    // Players rock beats cpu scissors
+    else if (playerChoice === 0 && cpuChoice === 2) {
+        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You win!`;
+    }
+    // Players scissors loses to cpu rock
+    else if (playerChoice === 2 && cpuChoice === 0) {
+        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You lose!`;
+    }
+    // If player has 0 and cpu has 1, or if player has 1 and cpu has 2, player loses.
+    else if (playerChoice < cpuChoice) {
+        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You lose!`;
+    }
+    // Only condition left is if player choice is greater than cpu choice. player wins these
+    else {
+        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You win!`;
+    }
+}   
