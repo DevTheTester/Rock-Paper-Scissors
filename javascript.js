@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
         cpuChoice = 2;
     }
     // Test to see if selection converts to integer.
-    console.log(`Player = ${playerChoice}/${playerSelection}, CPU = ${cpuChoice}/${computerSelection}`)
+    // console.log(`Player = ${playerChoice}/${playerSelection}, CPU = ${cpuChoice}/${computerSelection}`)
     
     // If selection number is the same declare draw.
     if (playerChoice === cpuChoice) {
@@ -51,3 +51,10 @@ function playRound(playerSelection, computerSelection) {
         return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You win!`;
     }
 }   
+
+// Function will play a round with cpu choosing for player and cpu, as many times as argument given.
+function game(number) {
+    for (let i = 0; i < number; i++) {
+        console.log(playRound(computerPlay(),computerPlay()))
+    }
+}
