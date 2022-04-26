@@ -52,7 +52,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }   
 
-// Function will play a round with cpu choosing for player and cpu, as many times as argument given.
+// Function will play a round that takes prompt for player vs random cpu choice, as many times as argument given.
 function game(number) {
     for (let i = 0; i < number; i++) {
         console.log(playRound(prompt("THINK FAST! ROCK, PAPER, OR SCISSORS??"),computerPlay()))
