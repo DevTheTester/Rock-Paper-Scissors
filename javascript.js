@@ -58,3 +58,12 @@ function game(number) {
         console.log(playRound(prompt("THINK FAST! ROCK, PAPER, OR SCISSORS??"),computerPlay()))
     }
 }
+
+let rock = document.querySelector('.btn-1');
+
+rock.addEventListener('click', () => {
+    alert("rock!")
+});
+
+
+
