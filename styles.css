@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+}
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.background {
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    background-image: url(/img/hunterxhunter.jpg); 
+    background-size: contain;    
+}
+
+button {
+    padding: 8px;
+    font-size: 12px;   
+    min-width: 80px;
+}
+
+.header {
+    background-color: black;
+    margin: 8px;
+    padding: 8px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    padding:24px;
+    min-width: 300px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.main-container .header {
+    display: flex;
+    margin-top: 25%;
+    padding:12px;
+    font-size: 18px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 0px;
+    margin: 12px;
+    
+}
+
+.results-container {
+    height: 100%;
+}
