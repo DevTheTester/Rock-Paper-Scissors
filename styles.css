@@ -15,7 +15,7 @@ body {
     height: 100%;
     display:flex;
     flex-direction: column;
-    background-image: url(../img/hunterxhunter.jpg); 
+    background-image: url(img/hunterxhunter.jpg); 
     background-size: contain;    
 }
 
