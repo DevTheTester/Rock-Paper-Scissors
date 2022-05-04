@@ -1,9 +1,3 @@
-// Elements that I can add to page after game is played 
-
-let resultContainer = document.querySelector('.results-container');
-let newHeader = resultContainer.appendChild('div')
-
-
 // Function that get's PC to choose between 3 numbers to represent rock, paper, scissors.
 function computerPlay() {
     let choice = ['rock' ,'paper', 'scissors']
@@ -38,40 +32,56 @@ function playRound(playerSelection, computerSelection) {
     
     // If selection number is the same declare draw.
     if (playerChoice === cpuChoice) {
-        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . It's a draw!`;
+        subheader.textContent = `You chose ${playerSelection}, Hisoka also chose ${computerSelection}. . . It's a draw!`;
+        resultImage.src='img/hisoka.jpg';
     }
     // Players rock beats cpu scissors
     else if (playerChoice === 0 && cpuChoice === 2) {
-        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You win!`;
+        subheader.textContent = `You chose ${playerSelection}, Hisoka blundered with ${computerSelection}. . . You win!`;
+        resultImage.src='img/gonrock.jpg';
     }
     // Players scissors loses to cpu rock
     else if (playerChoice === 2 && cpuChoice === 0) {
+        subheader.textContent = `You chose ${playerSelection}, Hisoka throws a ${computerSelection} at your DOME!. . . You lose!`;
+        resultImage.src='img/goncrying.png';
         return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You lose!`;
     }
     // If player has 0 and cpu has 1, or if player has 1 and cpu has 2, player loses.
     else if (playerChoice < cpuChoice) {
-        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You lose!`;
+        subheader.textContent = `You chose ${playerSelection}, Hisoka destroys you with ${computerSelection}. . . You are worthless!`;
+        resultImage.src='img/goncrying.png';
     }
     // Only condition left is if player choice is greater than cpu choice. player wins these
     else {
-        return `You chose ${playerSelection}, CPU chose ${computerSelection}. . . You win!`;
+        subheader.textContent = `You chose ${playerSelection}, Hisoka didn't see that coming! You beat his ${computerSelection}. . . Well done!`;
+        resultImage.src='img/gonwin.jpg';
     }
 }   
-
-// Function will play a round that takes prompt for player vs random cpu choice, as many times as argument given.
-function game(number) {
-    for (let i = 0; i < number; i++) {
-        console.log(playRound(prompt("THINK FAST! ROCK, PAPER, OR SCISSORS??"),computerPlay()))
-    }
-}
-
-// functions to turn buttons in html and integrate them with game code
+   
+// variables that select rock paper scissors buttons
 let rock = document.querySelector('.btn-1');
+let paper = document.querySelector('.btn-2');
+let scissors = document.querySelector('.btn-3');
+// variable that will select header to change text
+let subheader = document.querySelector('.subheader');
+let resultImage = document.querySelector('.result-image')
 
+// functions that play a round on click
 rock.addEventListener('click', () => {
-    playRound('rock', computerPlay())
+    console.log(playRound('rock', computerPlay())
+    )
 }
 );
 
+paper.addEventListener('click', () => {
+    console.log(playRound('paper', computerPlay())
+    )
+}
+);
 
+scissors.addEventListener('click', () => {
+    console.log(playRound('scissors', computerPlay())
+    )
+}
+);
 
