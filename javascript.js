@@ -1,3 +1,9 @@
+// Elements that I can add to page after game is played 
+
+let resultContainer = document.querySelector('.results-container');
+let newHeader = resultContainer.appendChild('div')
+
+
 // Function that get's PC to choose between 3 numbers to represent rock, paper, scissors.
 function computerPlay() {
     let choice = ['rock' ,'paper', 'scissors']
@@ -59,11 +65,13 @@ function game(number) {
     }
 }
 
+// functions to turn buttons in html and integrate them with game code
 let rock = document.querySelector('.btn-1');
 
 rock.addEventListener('click', () => {
-    alert("rock!")
-});
+    playRound('rock', computerPlay())
+}
+);
 
 
 
