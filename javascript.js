@@ -3,32 +3,18 @@ function computerPlay() {
     let choice = ['rock' ,'paper', 'scissors']
     return choice[Math.floor(Math.random() * choice.length)]
 }
-// Function with two parameters player choice and CPU choice will return win or loss
 
 function playRound(playerSelection, computerSelection) {  
-    // Take selections and assign them new number variables 1, 2, 3 to represent rock, paper, scissors.
-    playerSelectionLower = playerSelection.toLowerCase();
-    if (playerSelectionLower.includes('rock')) {
-        playerChoice = 0;
-    }
-    else if (playerSelectionLower.includes('paper')) {
-        playerChoice = 1;
-    }
-    else if (playerSelectionLower.includes('scissors')) {
-        playerChoice = 2;
-    }
 
-    if (computerSelection.includes('rock')) {
-        cpuChoice = 0;
-    }
-    else if (computerSelection.includes('paper')) {
-        cpuChoice = 1;
-    }
-    else if (computerSelection.includes('scissors')) {
-        cpuChoice = 2;
-    }
-    // Test to see if selection converts to integer.
-    // console.log(`Player = ${playerChoice}/${playerSelection}, CPU = ${cpuChoice}/${computerSelection}`)
+    // Object to convert choice of rock paper and scissors and convert to number.
+    playerSelection = playerSelection.toLowerCase();
+    choiceToNum = {
+        'rock':0,
+        'paper':1,
+        'scissors':2,
+    };
+    playerChoice = choiceToNum.playerSelection;
+    cpuChoice = choiceToNum.computerSelection;
     
     // If selection number is the same declare draw.
     if (playerChoice === cpuChoice) {
