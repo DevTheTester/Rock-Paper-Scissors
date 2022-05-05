@@ -13,8 +13,8 @@ function playRound(playerSelection, computerSelection) {
         'paper':1,
         'scissors':2,
     };
-    playerChoice = choiceToNum.playerSelection;
-    cpuChoice = choiceToNum.computerSelection;
+    playerChoice = choiceToNum[playerSelection];
+    cpuChoice = choiceToNum[computerSelection];
     
     // If selection number is the same declare draw.
     if (playerChoice === cpuChoice) {
